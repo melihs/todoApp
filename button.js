@@ -20,14 +20,14 @@ export default SendButton;
 
 const styles = StyleSheet.create({
 button : {
-    backgroundColor:'#ff0c2c',
+    backgroundColor:'#5e5ec1',
     flex:1,
     borderRadius:5,
     margin:4
 },
 text : {
-    fontSize:16,
-    color:'white'
+    fontSize:18,
+    color:'#ffffff'
 },
     touchable : {
     flex:1,

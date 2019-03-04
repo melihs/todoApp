@@ -22,7 +22,7 @@ export default class App extends Component<Props> {
   renderItem = (item) => {
     return (
         <View key={item} style={styles.items}>
-            <Text style={{ color:'white',fontSize:24}}>
+            <Text>
               {item}
             </Text>
         </View>
@@ -36,20 +36,18 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-      <View style={styles.navbar}>
-        <View style={styles.inputBar}>
-          <TextInput value={this.state.toDo} onChangeText={this.todo} placeholder='görev yazın' style={styles.input}/>
+        <View style={styles.navbar}>
+          <View style={styles.inputBar}>
+            <TextInput style={styles.input} value={this.state.toDo} onChangeText={this.todo} placeholder='Görev yazın'/>
+          </View>
+          <View style={{flex:1}}>
+            <SendButton onPress={this.addItem} text={'ekle'} />
+          </View>
         </View>
-        <View style={{flex:1}}>
-          <SendButton onPress={this.addItem} text={'ekle'} />
-        </View>
-      </View>
-        <ScrollView>
-          {
-            items.map((item) =>this.renderItem(item))
-          }
-        </ScrollView>
-
+        <View style={styles.hr}/>
+          <ScrollView>
+            { items.map((item) =>this.renderItem(item)) }
+          </ScrollView>
       </View>
     );
   }
@@ -62,27 +60,38 @@ const styles = StyleSheet.create({
     padding:8
   },
   inputBar : {
-    backgroundColor :'#ff0c2c',
+    backgroundColor :'#d1d1ff',
     flex:4
   },
   input :{
-    backgroundColor:'white',
+    backgroundColor:'#ffffff',
     margin:1,
     height:82,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   container : {
     flex:1,
     paddingTop:Platform.OS == 'ios' ? 40 : 0,
-    backgroundColor : 'white'
+    backgroundColor : '#d1d1ff'
   },
   items: {
-    height: 100,
-    backgroundColor: 'black',
+    height: 90,
+    backgroundColor: '#ffffff',
+    borderColor : '#000000',
+    borderWidth : 1,
     margin:10,
-    borderRadius: 10,
+    opacity : 15,
+    borderRadius: 3,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    fontSize:25,
+  },
+  hr : {
+    height : 1,
+    backgroundColor: '#000000',
+    marginHorizontal :24,
+    marginTop :15,
+    marginBottom :10
   }
 })
