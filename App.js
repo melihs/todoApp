@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   items: {
     height: 100,
     backgroundColor: 'black',
-    margin: Platform.OS == 'ios' ? 10 : 10,
+    margin: Platform.OS == 'ios' ? 40 : 10,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center'
