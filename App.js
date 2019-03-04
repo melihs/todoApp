@@ -21,8 +21,10 @@ type Props = {};
 export default class App extends Component<Props> {
   renderItem = ()=>{
     return (
-        <View style={{height: 100,backgroundColor:'black',margin:8,borderRadius:10}}>
-
+        <View style={{height: 100,backgroundColor:'black',margin:8,borderRadius:10,justifyContent:'center',alignItems:'center'}}>
+            <Text style={{ color:'white',fontSize:24}}>
+              Ders çalış
+            </Text>
         </View>
     )
   }
@@ -36,6 +38,12 @@ export default class App extends Component<Props> {
         </View>
       </View>
         <ScrollView>
+          {this.renderItem()}
+          {this.renderItem()}
+          {this.renderItem()}
+          {this.renderItem()}
+          {this.renderItem()}
+          {this.renderItem()}
           {this.renderItem()}
         </ScrollView>
 
