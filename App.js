@@ -74,12 +74,13 @@ const styles = StyleSheet.create({
   },
   container : {
     flex:1,
-    marginTop:Platform.OS == 'ios' ? 40 : 0
+    paddingTop:Platform.OS == 'ios' ? 40 : 0,
+    backgroundColor : 'white'
   },
   items: {
     height: 100,
     backgroundColor: 'black',
-    margin: Platform.OS == 'ios' ? 40 : 10,
+    margin:10,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center'
