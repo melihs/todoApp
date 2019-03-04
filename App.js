@@ -19,17 +19,24 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  renderItem = ()=>{
+    return (
+        <View style={{height: 100,backgroundColor:'black',margin:8,borderRadius:10}}>
+
+        </View>
+    )
+  }
   render() {
     return (
-      <View style={{flex : 1,marginTop:Platform.OS == 'ios' ? 21 : 0}}>
-      <View style={{backgroundColor: 'yellow',height: 100}}>
+      <View style={{flex : 1,marginTop:Platform.OS == 'ios' ? 40 : 0}}>
+      <View style={{backgroundColor: 'yellow',height: 100,flexDirection: 'row',padding:8}}>
         <View style={{backgroundColor :'blue', flex:4}}>
         </View>
         <View style={{backgroundColor :'red', flex:1}}>
         </View>
       </View>
         <ScrollView>
-
+          {this.renderItem()}
         </ScrollView>
 
       </View>
