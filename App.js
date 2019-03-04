@@ -10,36 +10,44 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+const items = [];
 type Props = {};
 export default class App extends Component<Props> {
-  renderItem = ()=>{
+  state = { toDo : ''}
+
+  addItem = () =>{
+    items.push(this.state.toDo)
+    this.setState({ toDo :''})
+  }
+  renderItem = (item) => {
     return (
-        <View style={styles.items}>
+        <View key={item} style={styles.items}>
             <Text style={{ color:'white',fontSize:24}}>
-              Ders çalış
+              {item}
             </Text>
         </View>
     )
   }
+  todo = (value) => {
+    this.setState({
+      toDo : value
+    })
+  }
   render() {
     return (
       <View style={styles.container}>
-      <View style={{backgroundColor: 'white',height: 100,flexDirection: 'row',padding:8}}>
-        <View style={{backgroundColor :'#7eef7c', flex:4,borderRadius:7}}>
-          <TextInput placeholder='görev yazın' style={{backgroundColor:'white',margin:2,height:75,borderRadius:3}}/>
+      <View style={styles.navbar}>
+        <View style={styles.inputBar}>
+          <TextInput value={this.state.toDo} onChangeText={this.todo} placeholder='görev yazın' style={styles.input}/>
         </View>
         <View style={{flex:1}}>
-          <SendButton text={'ekle'} />
+          <SendButton onPress={this.addItem} text={'ekle'} />
         </View>
       </View>
         <ScrollView>
-          {this.renderItem()}
-          {this.renderItem()}
-          {this.renderItem()}
-          {this.renderItem()}
-          {this.renderItem()}
-          {this.renderItem()}
-          {this.renderItem()}
+          {
+            items.map((item) =>this.renderItem(item))
+          }
         </ScrollView>
 
       </View>
@@ -47,6 +55,23 @@ export default class App extends Component<Props> {
   }
 }
 const styles = StyleSheet.create({
+  navbar :{
+    backgroundColor: '#ffffff',
+    height: 100,
+    flexDirection: 'row',
+    padding:8
+  },
+  inputBar : {
+    backgroundColor :'#ff0c2c',
+    flex:4
+  },
+  input :{
+    backgroundColor:'white',
+    margin:1,
+    height:82,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   container : {
     flex:1,
     marginTop:Platform.OS == 'ios' ? 40 : 0

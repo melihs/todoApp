@@ -3,10 +3,10 @@ import {View,Text,TouchableOpacity,StyleSheet } from 'react-native';
 
 class SendButton extends Component {
     render() {
-        const {text} = this.props;
+        const {text,onPress} = this.props;
         return (
           <View style={styles.button}>
-              <TouchableOpacity style={styles.touchable}>
+              <TouchableOpacity onPress={onPress} style={styles.touchable}>
                   <Text style={styles.text}>
                       {text}
                   </Text>
@@ -20,9 +20,9 @@ export default SendButton;
 
 const styles = StyleSheet.create({
 button : {
-    backgroundColor:'#5c9fed',
+    backgroundColor:'#ff0c2c',
     flex:1,
-    borderRadius: 12,
+    borderRadius:5,
     margin:4
 },
 text : {
