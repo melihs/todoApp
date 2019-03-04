@@ -14,7 +14,7 @@ type Props = {};
 export default class App extends Component<Props> {
   renderItem = ()=>{
     return (
-        <View style={{height: 100,backgroundColor:'black',margin:Platform.OS == 'ios' ? 30 : 0,borderRadius:10,justifyContent:'center',alignItems:'center'}}>
+        <View style={styles.items}>
             <Text style={{ color:'white',fontSize:24}}>
               Ders çalış
             </Text>
@@ -23,7 +23,7 @@ export default class App extends Component<Props> {
   }
   render() {
     return (
-      <View style={{flex:1,marginTop:Platform.OS == 'ios' ? 40 : 0}}>
+      <View style={styles.container}>
       <View style={{backgroundColor: 'white',height: 100,flexDirection: 'row',padding:8}}>
         <View style={{backgroundColor :'#7eef7c', flex:4,borderRadius:7}}>
           <TextInput placeholder='görev yazın' style={{backgroundColor:'white',margin:2,height:75,borderRadius:3}}/>
@@ -46,8 +46,17 @@ export default class App extends Component<Props> {
     );
   }
 }
-const styles = StyleSheet.create([
-
-
-
-])
+const styles = StyleSheet.create({
+  container : {
+    flex:1,
+    marginTop:Platform.OS == 'ios' ? 40 : 0
+  },
+  items: {
+    height: 100,
+    backgroundColor: 'black',
+    margin: Platform.OS == 'ios' ? 10 : 10,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+})
