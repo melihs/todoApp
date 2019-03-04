@@ -14,7 +14,7 @@ type Props = {};
 export default class App extends Component<Props> {
   renderItem = ()=>{
     return (
-        <View style={{height: 100,backgroundColor:'black',margin:Platform.OS == 'ios' ? 0 : 8,borderRadius:10,justifyContent:'center',alignItems:'center'}}>
+        <View style={{height: 100,backgroundColor:'black',margin:Platform.OS == 'ios' ? 30 : 0,borderRadius:10,justifyContent:'center',alignItems:'center'}}>
             <Text style={{ color:'white',fontSize:24}}>
               Ders çalış
             </Text>
@@ -46,3 +46,8 @@ export default class App extends Component<Props> {
     );
   }
 }
+const styles = StyleSheet.create([
+
+
+
+])
