@@ -21,7 +21,7 @@ type Props = {};
 export default class App extends Component<Props> {
   renderItem = ()=>{
     return (
-        <View style={{height: 100,backgroundColor:'black',margin:8,borderRadius:10,justifyContent:'center',alignItems:'center'}}>
+        <View style={{height: 100,backgroundColor:'black',margin:Platform.OS == 'ios' ? 1 : 8,borderRadius:10,justifyContent:'center',alignItems:'center'}}>
             <Text style={{ color:'white',fontSize:24}}>
               Ders çalış
             </Text>
