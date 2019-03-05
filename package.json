@@ -7,6 +7,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "mobx": "^5.9.0",
+    "mobx-react": "^5.4.3",
     "react": "16.6.3",
     "react-native": "0.58.6",
     "realm": "^2.24.0"
